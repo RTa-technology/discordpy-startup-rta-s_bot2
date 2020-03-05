@@ -22,3 +22,4 @@ class WikiDiscord(rta.Cog, name="Wd_to_discord"):
             discord_md = discord1_md.replace('[[code]]','```\n').replace('[[/code]]','\n```')
                 
         await message.channel.send(discord_md)
+ 
