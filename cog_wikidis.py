@@ -3,8 +3,8 @@ class WikiDiscord(rta.Cog, name="Wd_to_discord"):
     def __init__(self, bot):
         super().__init__()
         self.bot = bot
-        
-    @rta.event
+ 
+    @rta.command()
     async def on_message(message):
         """Wikidot Markdown → Discord Markdown"""
         if message.content.startswith('$ds'):
