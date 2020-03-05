@@ -3,7 +3,7 @@ import os
 import traceback
 prefix = '$'
 
-bot = commands.Bot(command_prefix=prefix, help_command=JapaneseHelpCommand())
+bot = commands.Bot(command_prefix=prefix)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
