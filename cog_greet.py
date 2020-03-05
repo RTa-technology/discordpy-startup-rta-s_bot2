@@ -7,10 +7,10 @@ class Greet(rta.Cog, name="Greet"):
     @rta.command(name="こんにちは")
     async def hello(self, ctx):
         """出会いのあいさつをする"""
-        await ctx.send(f"どうも、{ctx.author.name}さん!")
+        await ctx.send(f"{ctx.author.mention}\nどうも、{ctx.author.name}さん!")
 
     @rta.command(name="さようなら")
     async def goodbye(self, ctx):
         """別れの挨拶をする"""
-        await ctx.send(f"じゃあね、{ctx.author.name}さん!")
+        await ctx.send(f"{ctx.author.mention}\nじゃあね、{ctx.author.name}さん!")
 
