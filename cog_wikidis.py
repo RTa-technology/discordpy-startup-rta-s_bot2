@@ -7,9 +7,9 @@ class WikiDiscord(rta.Cog, name="Wd_to_discord"):
     @rta.event
     async def on_message(message):
         """Wikidot Markdown → Discord Markdown"""
-        if message.content.startswith('$ds'):
+        if message.content.startswith('/ds'):
         # 文字から「$ds」を抜く
-        dis_md = message.content[len('$ds'):].strip()
+        dis_md = message.content[len('/ds'):].strip()
                 
         discord1_md = dis_md.replace('//', '*').replace('**', '**').replace('//**', '***').replace('**//', '***').replace('__', '__').replace('--', '~~')
 
