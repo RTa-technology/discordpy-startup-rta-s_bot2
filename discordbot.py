@@ -4,7 +4,7 @@ import traceback
 from discord.ext import commands as rta
 from cog_basic import Basic
 from cog_greet import Greet
-
+from cog_wikidis import WikiDiscord
 
 bot = rta.Bot(command_prefix='$')#, help_command=JapaneseHelpCommand()
 
@@ -37,4 +37,5 @@ async def ping(ctx):
 
 bot.add_cog(Greet(bot=bot))
 bot.add_cog(Basic(bot=bot))
+bot.add_cog(WikiDiscord(bot=bot))
 bot.run(token)
