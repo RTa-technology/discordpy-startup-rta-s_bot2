@@ -4,7 +4,7 @@ import random
 from discord.ext import commands as rta
 from cog_basic import Basic
 from cog_greet import Greet
-from cog_dice import Dice
+
 
 bot = rta.Bot(command_prefix='$')#, help_command=JapaneseHelpCommand()
 
@@ -48,5 +48,5 @@ async def dice(ctx, dice: str):
 
 bot.add_cog(Greet(bot=bot))
 bot.add_cog(Basic(bot=bot))
-bot.add_cog(Dice(bot=bot))
+
 bot.run(token)
