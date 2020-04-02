@@ -15,11 +15,3 @@ class Dice(rta.Cog, name="Dice"):
         msg = f"{ctx.author.mention}\n" + result 
         await ctx.send(msg)
         
-    @rta.command(name="add")
-    async def add(ctx, left: int, right: int):
-        try:
-            left, right = map(int, dice.split(','))
-        except Exception:
-            await ctx.send('Format has to be in N,N!')
-            return      
-    await ctx.send(left + right)
