@@ -21,7 +21,7 @@ async def ping(ctx):
         await ctx.send('pong')
 
 @bot.command()
-async def roll(ctx, dice: str):
+async def dice(ctx, dice: str):
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
