@@ -1,6 +1,6 @@
 import os
 import traceback
-
+import random
 from discord.ext import commands as rta
 from cog_basic import Basic
 from cog_greet import Greet
