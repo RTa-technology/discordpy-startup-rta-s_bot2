@@ -16,8 +16,10 @@ class Dice(rta.Cog, name="Dice"):
         await ctx.send(msg)
         
     @rta.command(name="add")
-    async def add(ctx, add: str):
-        data=(message.content)
-        mappedData = map(int, data.split(","))
-        output = list(mappedData)
-        await ctx.send(sum(output))
+    async def add(ctx, left: int, right: int):
+        try:
+            left, right = map(int, dice.split(','))
+        except Exception:
+            await ctx.send('Format has to be in N,N!')
+            return      
+    await ctx.send(left + right)
