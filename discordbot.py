@@ -20,7 +20,17 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
         await ctx.send('pong')
 
+@bot.command()
+async def roll(ctx, dice: str):
+    """Rolls a dice in NdN format."""
+    try:
+        rolls, limit = map(int, dice.split('d'))
+    except Exception:
+        await ctx.send('Format has to be in NdN!')
+        return
 
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    await ctx.send(result)
 
 #class JapaneseHelpCommand(commands.DefaultHelpCommand):
 #   def __init__(self):
