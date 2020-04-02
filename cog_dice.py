@@ -15,3 +15,4 @@ class Dice(rta.Cog, name="Dice"):
         msg = f"{ctx.author.mention}\n" + result 
         await ctx.send(msg)
         
+ 
