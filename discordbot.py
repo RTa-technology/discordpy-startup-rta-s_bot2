@@ -29,7 +29,8 @@ async def dice(ctx, dice: str):
         return
 
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    await ctx.send(result)
+    msg = f"{ctx.author.mention}" + result 
+    await ctx.send(msg)
 
 #class JapaneseHelpCommand(commands.DefaultHelpCommand):
 #   def __init__(self):
