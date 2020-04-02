@@ -22,7 +22,6 @@ async def ping(ctx):
 
 @bot.command()
 async def roll(ctx, dice: str):
-    """Rolls a dice in NdN format."""
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
