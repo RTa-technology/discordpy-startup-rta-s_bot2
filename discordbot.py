@@ -1,16 +1,18 @@
-from discord.ext import commands
+import os
 import traceback
+import random
 import numpy as np
 from parse import parse
 import json
 import unicodedata
 import argparse
+from discord.ext import commands as rta
 
- 
-bot = rta.Bot(command_prefix='?')
- 
+
+
+bot = rta.Bot(command_prefix='$')#, help_command=JapaneseHelpCommand()
+
 token = os.environ['DISCORD_BOT_TOKEN']
- 
 def get_east_asian_width_count(text):
     count = 0
     for c in text:
@@ -535,5 +537,5 @@ async def on_message(message):
             playmp3(voice, 'dice.mp3')
             await message.channel.send(m) # discord.py ver1.0
             #await client.send_message(message.channel, m) # discord.py ver0.16
- 
+
 bot.run(token)
