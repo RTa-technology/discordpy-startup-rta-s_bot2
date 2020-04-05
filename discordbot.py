@@ -495,25 +495,8 @@ def bot_startswitch(message):
     else:
         return None
  
-def playmp3(voice, filepath):
-    voice.play(discord.FFmpegPCMAudio(filepath), after=lambda e: print('play error:', e))
- 
-parser = argparse.ArgumentParser(description='')
- 
-parser.add_argument('-m', '--mode', help='run mode option', default='release', choices=['debug', 'release'])
- 
-args = parser.parse_args()
- 
-filepath = {
-    'debug': 'config_test.json',
-    'release': 'config.json'
-}
- 
-conf = load_config(filepath[args.mode])
-client = discord.Client()
-client_id = conf['client_id']
- 
-voice = None
+
+
  
 @bot.event
 async def on_ready():
@@ -534,7 +517,6 @@ async def on_message(message):
             m = 'PL:' + message.author.name + '\n'
             m += dice_message(input_msg, message)
         # メッセージが送られてきたチャンネルへメッセージを送ります
-            playmp3(voice, 'dice.mp3')
             await message.channel.send(m) # discord.py ver1.0
             #await client.send_message(message.channel, m) # discord.py ver0.16
 
